@@ -8,9 +8,9 @@ Deze workspace bevat de codevoorbeelden uit de reader en nog meer. De codevoorbe
 
 Om deze codevoorbeelden werkend te zien bouw dan vanuit deze folder de workspace. Gebruik hiervoor de volgende commando's in de terminal. Hierbij is de aanname dat ROS 2 al is geinstalleerd.
 
-Voeg de ROS 2 enviroment toe aan de terminal:
+Voeg de ROS 2 enviroment toe aan de terminal:  
 `source /location/of/ROSinstallation/ros/foxy/setup.bash`
-Bij standaard installatie wordt de commando:
+Bij standaard installatie wordt de commando:  
 `source /opt/ros/foxy/setup.bash`
 
 Ga naar de workspace:
