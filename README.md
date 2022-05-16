@@ -1,5 +1,7 @@
 # ROS2_reader
-*English follows Dutch*  
+[![CC BY-SA 4.0][cc-by-sa-shield]][cc-by-sa]
+
+*English follows Dutch* 
 
 Deze reader geeft de lezer de basis voor het gebruik van de C++-library [ROS 2](https://www.ros.org/). De [officiële ROS 2 tutorials en codevoorbeelden](https://docs.ros.org/en/foxy/) zijn pittig en geven niet altijd het complete begrip om (snel) te kunnen beginnen met het bouwen van eigen ROS 2 packages. De reader probeert dit gat te dichten.
 
@@ -13,7 +15,7 @@ De **reader** en de **latex-template** zijn gelicenteerd met de
 Bij gebruikt van (inhoud van) de reader volstaat als naamsvermelding: Jorn Bunk.  
 Bij het gebruik van de LaTeX-template voor de opmaak volstaat als naamsvermelding: Huib Aldewereld.  
 
-[![CC BY-SA 4.0][cc-by-sa-image]][cc-by-sa] [![CC BY-SA 4.0][cc-by-sa-shield]][cc-by-sa]
+[![CC BY-SA 4.0][cc-by-sa-image]][cc-by-sa] 
 
 De **codevoorbeelden** zijn gelicentieerd met de [de unlicense licentie](https://unlicense.org/), zodat ze vrij en zonder consequenties gebruikt kunnen worden als basis voor elk (ROS2-)software project. Naamsvermelding wordt wel gewaardeerd, maar is dus niet verplicht. Bij het gebruik van de codevoorbeelden in tutorials of andere vormen van uitleg wordt gewaardeerd als men zich houdt aan de licentie van de reader.
 
