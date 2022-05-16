@@ -22,6 +22,8 @@ De **codevoorbeelden** zijn gelicentieerd met de [de unlicense licentie](https:/
 [cc-by-sa-image]: https://licensebuttons.net/l/by-sa/4.0/88x31.png
 [cc-by-sa-shield]: https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg
 
+# Mogelijke uitbreidingen
+Een reader kan altijd beter. Verbeteringen en bijdrage aan de reader en codevoorbeelden zijn altijd welkom. Mogelijke meerwaarde kan gevonden worden in een hoofdstuk over ROS-launch-files en in meer practicumopdrachten waarbij gegeven code gelezen of geanalyseerd moet worden.
 
 # English
 
