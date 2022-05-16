@@ -6,7 +6,7 @@ Deze reader geeft de lezer de basis voor het gebruik van de C++-library [ROS 2](
 
 De reader is beschikbaar als pdf en als losse latex bestanden. De pdf gebouwd in [Overleaf](https://www.overleaf.com) met de LuaLatex compiler. 
 
-Alle codevoorbeelden uit de reader zijn ook beschikbaar in de repository. Daarnaast zijn er nog extra codevoorbeelden te vinden die wat varianten op de voorbeelden uit de reader laten zien. De codevoorbeelden zijn getest met ROS 2 Foxy Fitzroy.
+Alle codevoorbeelden uit de reader zijn ook beschikbaar in de repository. Daarnaast zijn er nog extra codevoorbeelden beschikbaar. De codevoorbeelden zijn getest met ROS 2 Foxy Fitzroy.
 
 ## Licenties
 De **reader** en de **latex-template** zijn gelicenteerd met de
