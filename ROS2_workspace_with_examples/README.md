@@ -4,7 +4,7 @@
 
 Deze workspace bevat de codevoorbeelden uit de reader en nog meer. De codevoorbeelden zijn zo veel mogelijk voorzien van commentaar voor snelle en directe uitleg. De voorbeelden zijn getest met ROS 2 Foxy Fitzroy.
 
-#bouwen
+# bouwen
 
 Om deze codevoorbeelden werkend te zien bouw dan vanuit deze folder de workspace. Gebruik hiervoor de volgende commando's in de terminal. Hierbij is de aanname dat ROS 2 al is geinstalleerd.
 
