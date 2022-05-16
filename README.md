@@ -1,6 +1,5 @@
 # ROS2_reader
 *English follows Dutch*  
-[![CC BY-SA 4.0][cc-by-sa-shield]][cc-by-sa]
 
 Deze reader geeft de lezer de basis voor het gebruik van de C++-library [ROS 2](https://www.ros.org/). De [officiële ROS 2 tutorials en codevoorbeelden](https://docs.ros.org/en/foxy/) zijn pittig en geven niet altijd het complete begrip om (snel) te kunnen beginnen met het bouwen van eigen ROS 2 packages. De reader probeert dit gat te dichten.
 
