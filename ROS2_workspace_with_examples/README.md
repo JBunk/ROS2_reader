@@ -4,7 +4,7 @@
 
 Deze workspace bevat de codevoorbeelden uit de reader en nog meer. De codevoorbeelden zijn zo veel mogelijk voorzien van commentaar voor snelle en directe uitleg. De voorbeelden zijn getest met ROS 2 Foxy Fitzroy.
 
-### Inhoud
+## Inhoud
 **- hello_noheaders**  
       Een package met een simpele node in 1 bestand (HelloNode code van de reader).  
 **- hello**  
@@ -32,7 +32,7 @@ Deze workspace bevat de codevoorbeelden uit de reader en nog meer. De codevoorbe
 **- weird_pubsub**  
    Uitwerking van een practicumopdracht uit de reader.  
 
-### Bouwen
+## Bouwen
 
 Om deze codevoorbeelden werkend te zien bouw dan vanuit deze folder de workspace. Gebruik hiervoor de volgende commando's in de terminal. Hierbij is de aanname dat ROS 2 al is geinstalleerd.
 
@@ -49,6 +49,6 @@ Bouw alle packages:
 
 Meer uitleg over het bouwen van packages/nodes kan men vinden in de reader in appendix A.
 
-## English
+# English
 
 *todo*
