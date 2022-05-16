@@ -1,5 +1,5 @@
 ### ROS2_reader
-*English follows Dutch*
+*English follows Dutch*  
 [![CC BY-SA 4.0][cc-by-sa-shield]][cc-by-sa]
 
 In deze repositorie staat een reader die de basis van [ROS 2][https://www.ros.org/] uitlegt. De [officiele ROS 2 tutorials en codevoorbeelden][https://docs.ros.org/en/foxy/] zijn pittig en geven niet altijd het complete begrip om (snel) te kunnen beginnen met het bouwen van eigen ROS 2 nodes. De reader probeert dit gat te dichten.
