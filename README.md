@@ -1,4 +1,4 @@
-### ROS2_reader
+# ROS2_reader
 *English follows Dutch*  
 [![CC BY-SA 4.0][cc-by-sa-shield]][cc-by-sa]
 
@@ -8,7 +8,7 @@ De reader is beschikbaar als pdf en als losse latex bestanden. De pdf gebouwd in
 
 Alle codevoorbeelden uit de reader zijn ook beschikbaar in de repository. Daarnaast zijn er nog extra codevoorbeelden te vinden die wat varianten op de voorbeelden uit de reader laten zien. De codevoorbeelden zijn getest met ROS 2 Foxy Fitzroy.
 
-# Licenties
+## Licenties
 De **reader** en de **latex-template** zijn gelicenteerd met de
 [Creative Commons Attribution-ShareAlike 4.0 International Licentie][cc-by-sa].  
 Bij gebruikt van (inhoud van) de reader volstaat als naamsvermelding: Jorn Bunk.  
@@ -22,7 +22,7 @@ De **codevoorbeelden** zijn gelicentieerd met de [de unlicense licentie](https:/
 [cc-by-sa-image]: https://licensebuttons.net/l/by-sa/4.0/88x31.png
 [cc-by-sa-shield]: https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg
 
-# Mogelijke uitbreidingen
+## Mogelijke uitbreidingen
 Een reader kan altijd beter. Verbeteringen en bijdrage aan de reader en codevoorbeelden zijn altijd welkom. Mogelijke meerwaarde kan gevonden worden in een hoofdstuk over ROS-launch-files en in meer practicumopdrachten waarbij gegeven code gelezen of geanalyseerd moet worden.
 
 # English
