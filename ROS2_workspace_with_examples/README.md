@@ -49,6 +49,9 @@ Bouw alle packages:
 
 Meer uitleg over het bouwen van packages/nodes kan men vinden in de reader in appendix A.
 
+## Licentie
+De **codevoorbeelden** zijn gelicentieerd met de [de unlicense licentie](https://unlicense.org/), zodat ze vrij en zonder consequenties gebruikt kunnen worden als basis voor elk (ROS2-)software project. Naamsvermelding wordt wel gewaardeerd, maar is dus niet verplicht. Bij het gebruik van de codevoorbeelden in tutorials of andere vormen van uitleg wordt gewaardeerd als men zich houdt aan de licentie van de reader.
+
 # English
 
 *todo*
