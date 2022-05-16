@@ -16,7 +16,7 @@ Bij het gebruik van de LaTeX-template voor de opmaak volstaat als naamsvermeldin
 
 [![CC BY-SA 4.0][cc-by-sa-image]][cc-by-sa]
 
-De **codevoorbeelden** zijn gelicentieerd met de [de unlicense licentie](https://unlicense.org/), zodat ze vrij en zonder consequenties gebruikt kunnen worden als basis voor elk (ROS2-)software project. Naamsvermelding wordt wel gewaardeerd. Bij het gebruik van de codevoorbeelden in tutorials of andere vormen van uitleg wordt gewaardeerd als men zich houdt aan de licentie van de reader.
+De **codevoorbeelden** zijn gelicentieerd met de [de unlicense licentie](https://unlicense.org/), zodat ze vrij en zonder consequenties gebruikt kunnen worden als basis voor elk (ROS2-)software project. Naamsvermelding wordt wel gewaardeerd, maar is dus niet verplicht. Bij het gebruik van de codevoorbeelden in tutorials of andere vormen van uitleg wordt gewaardeerd als men zich houdt aan de licentie van de reader.
 
 [cc-by-sa]: https://creativecommons.org/licenses/by-sa/4.0/deed.nl
 [cc-by-sa-image]: https://licensebuttons.net/l/by-sa/4.0/88x31.png
