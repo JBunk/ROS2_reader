@@ -11,8 +11,8 @@ Alle codevoorbeelden uit de reader zijn ook beschikbaar in de repository. Daarna
 # Licenties
 De **reader** en de **latex-template** zijn gelicenteerd met de
 [Creative Commons Attribution-ShareAlike 4.0 International Licentie][cc-by-sa].  
-Bij gebruikt van (inhoud van) de reader volstaat als naamsvermelding: Jorn Bunk.
-Bij het gebruik van de LaTeX-template voor de opmaak volstaat als naamsvermelding: Huib Aldewereld.
+Bij gebruikt van (inhoud van) de reader volstaat als naamsvermelding: Jorn Bunk.  
+Bij het gebruik van de LaTeX-template voor de opmaak volstaat als naamsvermelding: Huib Aldewereld.  
 
 [![CC BY-SA 4.0][cc-by-sa-image]][cc-by-sa]
 
