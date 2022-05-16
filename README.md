@@ -8,7 +8,7 @@ De reader is beschikbaar als pdf en als losse latex bestanden. De pdf gebouwd in
 
 Alle codevoorbeelden uit de reader zijn ook beschikbaar in de repository. Daarnaast zijn er nog extra codevoorbeelden te vinden die wat varianten op de voorbeelden uit de reader laten zien. De codevoorbeelden zijn getest met ROS 2 Foxy Fitzroy.
 
-# licenties
+# Licenties
 De reader en de latex-template zijn gelicenteerd met de
 [Creative Commons Attribution-ShareAlike 4.0 International Licentie][cc-by-sa].  
 Bij gebruikt van (inhoud van) de reader volstaat als naamsvermelding: Jorn Bunk.
