@@ -1,0 +1,245 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Documentation report
+%
+% Original LaTeX-template by Huib Aldewereld
+% The LaTeX-template is licensed under Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) license
+%
+% Important note:
+% Chapter heading images should have a 2:1 width:height ratio,
+% e.g. 920px width and 460px height.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[11pt,fleqn]{book} % Default font size and left-justified equations
+
+\usepackage[top=3cm,bottom=3cm,left=1.0cm,right=1.0cm,headsep=10pt,a4paper,margin=3cm,marginparwidth=2.5cm]{geometry} % Page margins
+
+
+% orginele reader gebruikte HAN-huisstijl. Op verzoek van de HAN-communicatie-afdeling aangepast
+\usepackage[table, x11names]{xcolor} % Required for specifying colors by name
+\definecolor{hanblack}{RGB}{0, 0, 0} % 
+\definecolor{notHANred}{RGB}{0, 102, 0 } %iets wat niet de HAN-rood is.
+%\definecolor{hanred}{RGB}{229, 0, 86 } %officiele rood van de HAN
+\definecolor{hanwhite}{RGB}{255, 255, 255 } %officiele rood van de HAN
+\definecolor{handarkgrey}{RGB}{69, 69, 69 } %officiele donker grijs van de HAN
+\definecolor{hangrey}{RGB} {145, 145, 145 } %officiele grijs van de HAN
+\definecolor{hanlightgrey}{RGB}{227, 227, 227 } %officiele grijs van de HAN
+
+% Added by Jorn:
+% some packages may not be needed anymore...
+\usepackage{eurosym} %required voor euro (money) symbol
+\usepackage{subcaption} %required for multiple images in one image.
+\usepackage[T1]{fontenc} % om een letter net iets lager te plaatsen.
+\interfootnotelinepenalty=10000 %footnotes niet over meerdere pagina's.
+\usepackage[export]{adjustbox} %for aligning images
+\usepackage{lipsum} %voor lipsum text
+\usepgflibrary{arrows} % for pgf-umlsd
+\usepackage{changepage} % om minipages groter the maken dan textwidth
+
+
+% Margin captions (voor plaatjes / figures/ figuren/ figuur)
+\usepackage{floatrow}
+\floatsetup{margins=hangleft,capposition=beside,capbesideposition={top,left},floatwidth=\textwidth}
+\usepackage[labelfont=bf,labelsep=newline,justification=raggedright, font=scriptsize]{caption}
+
+% Continuous footnotes
+\usepackage{chngcntr}
+\counterwithout{footnote}{chapter}
+
+% Font Settings
+\usepackage{avant} % Use the Avantgarde font for headings
+
+\usepackage{microtype} % Slightly tweak font spacing for aesthetics
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+
+% Code formats
+\usepackage{Layout_files/python}
+\usepackage{Layout_files/C++}
+\usepackage{Layout_files/Dos}
+\usepackage{Layout_files/xml}
+
+\renewcommand{\lstlistingname}{Codevoorbeeld}
+\renewcommand{\lstlistlistingname}{List of \lstlistingname s}
+
+
+\usepackage[hidelinks]{hyperref}
+\usepackage{array}
+\usepackage{multicol}
+% define centering minipage column type
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+% rotate for column headers
+\usepackage{adjustbox}
+\newcolumntype{R}[2]{%
+    >{\adjustbox{angle=#1,lap=\width-(#2)}\bgroup}%
+    l%
+    <{\egroup}%
+}
+\newcommand*\rot{\multicolumn{1}{R{60}{1em}}}% no optional argument here, please!
+\usepackage{physics,enumitem}
+
+
+\usepackage[colorinlistoftodos,textsize=scriptsize]{todonotes}
+\newcommand{\note}[1]{\todo[color=notHANred!60]{#1}}
+
+\usepackage[title,titletoc]{appendix}
+\renewcommand{\appendixtocname}{Appendices}
+
+% add for bibliography:
+% Bibliographybackref=true,abbreviate=false,
+%\usepackage{csquotes}
+%\usepackage[style=authoryear,citestyle=apa,natbib=true,autopunct=true%,backend=biber]{biblatex}
+%\addbibresource{bibliography.bib} % BibTeX bibliography file
+%\defbibheading{bibempty}{}
+
+\input{Layout_files/structure} % Insert the commands.tex file which contains the majority of the structure behind the template
+
+\tikzstyle{coverbox} = [fill=black, rectangle, inner sep=7pt, inner ysep=12pt, fill opacity=1, text opacity=1]
+\usetikzlibrary{arrows, shapes, positioning, arrows.meta,decorations.pathreplacing,matrix,positioning,3d, automata, positioning,fit,calc}
+\tikzstyle{blArrow}=[line width=1mm,draw=black!80,-triangle 45,postaction={draw, line width=3mm, shorten >=4mm, -}]
+
+\tikzset{xyp/.style={canvas is xy plane at z=#1}}
+\tikzset{xzp/.style={canvas is xz plane at y=#1}}
+\tikzset{yzp/.style={canvas is yz plane at x=#1}}
+
+%
+
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\begingroup
+\thispagestyle{empty}
+\AddToShipoutPicture*{\put(-275, -50){
+		\parbox[b][\paperheight]{\paperwidth}{%
+			\vfill
+			\centering
+			\includegraphics[height=1.1\paperheight]{Pictures/cc_pixabay_cover_robot.jpg}
+			\vfill
+}}} % Image background
+\begin{center}
+	\begin{tikzpicture} [remember picture,overlay]
+	\node [coverbox] (title) at (0, -1) {
+		\begin{minipage}{\textwidth}
+		\centering
+		\normalfont\fontsize{35}{35}\sffamily\selectfont
+		\textbf{\color{hanwhite}{ROS 2}}\\ % book title
+		{\LARGE \color{hanwhite}{Een uitgebreide introductie}} % sub title
+		\end{minipage}
+	};
+	\node [coverbox] (authors) at (0, -18.5) {
+		\begin{minipage}{\textwidth}
+		\centering
+		\normalfont\fontsize{24}{24}\sffamily\selectfont
+		{\huge\color{hanwhite}{Jorn Bunk}}
+		\end{minipage}
+	};
+	\node (logo) at (2, -25) {
+		\includegraphics[width=2cm, right]{HAN_merkteken_descriptor-144}
+	};
+	
+	\end{tikzpicture}
+\end{center}
+\endgroup
+
+%----------------------------------------------------------------------------------------
+%	COPYRIGHT PAGE
+%----------------------------------------------------------------------------------------
+
+\newpage
+
+\includegraphics[width=7cm, right]{HAN_merkteken_descriptor-144}
+~\vfill
+\thispagestyle{empty}
+
+\noindent \textsc{Dit document is gemaakt voor studenten van AIM van de Hogeschool Arnhem en Nijmegen. Dit document is gelicentieerd onder een \textit{Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)} licentie. Alle codevoorbeelden zijn gelicentieerd onder een \textit{Attribution 4.0 International (CC BY 4.0)} licentie.}\\ % License information
+
+\noindent \url{www.han.nl}\\ % URL
+
+\noindent Dit document is tot stand gekomen door bijdrages en feedback van:\\
+\\[0.2cm]
+\begin{tabular}{|p{3.5cm}|p{4cm}|p{4cm}|}
+\hline
+Jorn Bunk & Hogeschooldocent ESD & Auteur\\
+Wilrick Bakker & Student HAN & Feedback \\
+Erik Brilleman & Student HAN & Feedback\\
+Sandra ter Maat & Student HAN & Feedback \\
+Daan Smienk & Student HU & Feedback \\
+Sua Wilhelm & Student HU & Feedback \\
+Huib Aldewereld & & \LaTeX-template \\
+\hline
+\end{tabular}\\[1cm]
+
+\noindent \textit{Versie 1.1, april 2022} % Printing/edition date
+
+%----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS
+%----------------------------------------------------------------------------------------
+
+\chapterimage{cc_pixabay_header_bureau} % Table of contents heading image
+
+\pagestyle{empty} % No headers
+\setcounter{tocdepth}{1}
+\tableofcontents % Print the table of contents itself
+
+%\cleardoublepage % Forces the first chapter to start on an odd page so it's on the right
+
+\pagestyle{fancy} % Print headers again
+
+%----------------------------------------------------------------------------------------
+%	CHAPTERS
+%----------------------------------------------------------------------------------------
+
+% Chapter 1
+\chapterimage{cc_pixabay_header_robot_books.png} 
+\input{introductie}
+\chapterimage{cc_pixabay_header_bee}
+\input{ROS-nodes}
+\chapterimage{cc_pixabay_header_AI} 
+\input{ROS-pub-sub}
+\chapterimage{cc_pixabay_header_robotarm_dice.jpg} 
+\input{ROS-services}
+\chapterimage{cc_pixabay_header_chip} 
+\input{ROS-action}
+\chapterimage{cc_pixabay_header_robot_on_stairs} 
+\input{ROS-overige}
+\chapterimage{cc_pixabay_header_package} 
+\input{ROS-packages} 
+\chapterimage{cc_pixabay_header_backpacker} 
+\input{Practicum} 
+
+% Appendices
+\begin{appendices}
+\renewcommand{\chaptername}{Appendix} % fix header
+\renewcommand{\appendixname}{} % remove 'Appendix' from chapter name in toc
+\chapterimage{cc_pixabay_header_lego_builders}
+\addappheadtotoc % Add a section header 'Appendices' to toc
+%add below the appendixes:
+\input{HelloNodePackage}
+\chapterimage{cc_pixabay_header_doors}
+\input{FAQ}
+
+\end{appendices}
+%----------------------------------------------------------------------------------------
+%	References
+%----------------------------------------------------------------------------------------
+
+% below is needed if we want to add a bibliography
+
+%\chapterimage{header-proof.png} % Table of contents heading image
+
+%\pagestyle{empty} % No headers
+
+%\printbibliography\addcontentsline{toc}{chapter}{Bibliografie} 
+
+%\cleardoublepage % Forces the first chapter to start on an odd page so it's on the right
+
+%\pagestyle{fancy} % Print headers again
+
+\end{document}

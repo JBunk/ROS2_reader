@@ -1,0 +1,64 @@
+\chapter{Frequently Asked Questions}
+
+\section{ROS?!}
+
+\subsection{ondanks dat ik een package bouw blijft hij de oude gecompileerde bestanden uitvoeren?}
+Waarschijnlijk bouw en run je op twee verschillende plekken. Waarschijnlijk ben je aan het bouwen in de package in plaats van in de hoofdfolder van je workspace.
+
+\subsection{Ik heb al heel veel geprobeerd, maar de fout blijft maar bestaan?}
+Waarschijnlijk bouw en run je op twee verschillende plekken. Waarschijnlijk ben je aan het bouwen in de package in plaats van in de hoofdfolder van je workspace.
+
+
+
+\subsection{Rare errors}
+\textit{Ik krijg rare errors?}
+
+Waarschijnlijk ben je vergeten de ROS 2 environment te activeren door middel van:
+\begin{lstlisting}[style=DOS, caption=Hello world, firstnumber=0, label={code:DOS_voorbeeld}]
+ source /opt/ros/foxy/setup.bash
+\end{lstlisting}
+Dit moet je doen in elke terminal voordat je iets met ROS 2 doet (zowel runnen van nodes als het bouwen van packages).
+
+\subsection{Colcon build geeft warning}
+\textit{WARNING:colcon.colcon\_ros.prefix\_path.ament:The path '/een/path/' in the environment variable AMENT\_PREFIX\_PATH doesn't exist}
+Waarschijnlijk heb je een package een andere naam gegeven. Deze warning kan geen kwaad. Wil je van de warning af? Verwijder dan de folders \textit{install}, \textit{build} en \textit{log} (rm -r build log install) en start een nieuwe terminal\footnote{Dit kan waarschijnlijk ook door AMENT\_PREFIX\_PATH te resetten. Laat even weten als je het command hiervoor hebt.}.
+
+\subsection{Colcon build geeft error  message/service/action van andere package}
+\begin{enumerate}
+\item \textit{CMake Error at CMakeLists.txt:24 (find\_package):
+  By not providing "Findpackage\_name" in CMAKE\_MODULE\_PATH this
+  project has asked CMake to find a package configuration file provided by
+  "packagename", but CMake did not find one.}
+
+Je bent vergeten in je package.xml de package met de message/service/action toe te voegen aan aan het rijtje met <depend> </depend>.
+
+\item \textit{CMake Error at /opt/ros/foxy/share/amen\_cmake\_target\_dependencies/cmake/ament\_target\_dependencies.cmake:77 (message):
+  ament\_target\_dependencies() the passed package name `package\_name'}
+
+Je bent vergeten de package met de message/action/service toe te voegen als dependencie aan je CMakeLists.txt
+
+\end{enumerate}
+\subsection{Message/service/action met een string}
+\textit{Een string die ik via een message/service/action heb verstuurd print als rare tekens?}
+
+Waarschijnlijk ben je vergeten om de functie \textit{c\_str()} te gebruiken. Je drukt nu de pointer af. Voorbeeld: Als je string in \textit{data} zit, dan krijg je de string met \textit{data.c\_str()}.
+
+\subsection{Custom message/service/action hpp includeren}
+\textit{Als ik een custom message/service/action heb gemaakt hoe heet dan de hpp die ik moet includeren?}
+Een custom message/service/action wordt door ROS omgezet naar een .hpp die je moet includeren in de C++ bestanden die gebruik maken van de message/service/action. Het door ROS gemaakte .hpp-bestand hanteert een andere bestandsnaamconventie.
+De naam van een custom message/service/action moet beginnen met een hoofdletter. Het hpp-bestand dat je moet includeren heeft vervolgens geen hoofdletters, maar voor elke hoofdletter, met uitzondering van de eerste, wordt een underscore (\_) geplaatst. Het pad van het hpp-bestand is gelijk aan dat van je custom message/action/service. In de codevoorbeelden die komen bij deze reader op de git-omgeving kan je hier voorbeelden van vinden.
+
+\subsection{Error rond $>$ en ::SharedPointer bij het maken van een action Node}
+Waarschijnlijk ben je rclcpp\_action vergeten toe te voegen aan je package.xml.
+
+\subsection{Vtable}
+\textit{undefined reference to `vtable for \dots'.}
+Waarschijnlijk heeft je class/node nog geen destructor.
+
+\section{Arduino?!}
+
+\subsection{Serial Communicatie traag }
+\textit{Als ik communiceer met serial op arduino kost dat veel tijd.}
+
+Haal niet steeds het bericht op uit de buffer. Kijk eerst of er iets in de buffer staat door gebruik te maken van de functie \textit{Serial.available()}: \url{https://www.arduino.cc/reference/en/language/functions/communication/serial/available/}
+

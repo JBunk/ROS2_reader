@@ -1,0 +1,133 @@
+\chapter{Nodes}
+ \label{chp:ROS_nodes}
+% http://docs.ros2.org/bouncy/api/rclcpp/classrclcpp_1_1_node.html 
+%afgekeken bij: https://roboticsbackend.com/write-minimal-ros2-cpp-node/
+\textit{Dit hoofdstuk gaat in op C++code voor het maken van een ROS-node. De stappen voor het maken van een ROS-package en het runnen van de node uit dit hoofdstuk zijn te vinden in appendix \ref{chp:HelloNode_package}.}\\
+
+\noindent De basis van een ROS-programma zijn de nodes. Elke node is een proces en vaak verantwoordelijke voor \'e\'en taak of onderdeel. Dit kunnen dus processen zijn die hardware aansturen, maar kunnen ook processen zijn die sensordata verwerken (bijvoorbeeld beeldherkenning), de business logic afhandelen (de ``AI'') of berekeningen doen die nodig zijn voor het aansturen van andere processen. In dit hoofdstuk bekijken wat, qua code, een node precies is en hoe we het gebruiken.
+
+In codevoorbeeld \ref{code:min_ROSnode} zien we het maken van de meest simpele node en het starten van deze node. Deze node doet niks, maar we zien hier wel dat we de node een shared pointer moeten maken, zodat vervolgens ROS het met de commando \textit{rclcpp::spin()} er een thread van kan maken. 
+\begin{lstlisting}[language=C++, caption={Het maken en runnen van een minimalistische ROS-Node.}, firstnumber=0, label={code:min_ROSnode}]
+// import the ROS2 core lib:
+#include "rclcpp/rclcpp.hpp" 
+
+int main(int argc, char **argv)
+{
+    // start ROS2:
+    rclcpp::init(argc, argv);
+    // create a node with the name "my_node_name" and
+    // make it a shared pointer
+    auto node = std::make_shared<rclcpp::Node>("my_node_name");
+    // run the node (until you kill it (ctrl-c)):
+    rclcpp::spin(node);
+    // stop ROS2:
+    rclcpp::shutdown(); 
+    return 0;
+}
+\end{lstlisting}
+
+\noindent Als we onze eigen ROSnode willen definiëren dan doen we dat door een subclass te maken van de rclcpp::Node. De initialisatie van deze subclass moet natuurlijk ook in een sharedpointer, zodat we er een thread binnen ROS van kunnen maken met het commando \textit{rclcpp::spin()}. In codevoorbeeld \ref{code:min_eigen_ROSnode_hpp}, \ref{code:min_eigen_ROSnode_cpp} en \ref{code:min_eigen_ROSnode_main} zien we dit uitgewerkt. De bestanden zijn netjes gesplitst in een een header-file, source file en de main die de node opstart. Buiten bestaan en zijn superclass aanmaken doet de node van de codevoorbeelden nog niks. Let op: De constructor van de superclass rclcpp::Node heeft als parameter de naam van de node. Elke node moet een unieke naam hebben.
+
+\begin{lstlisting}[language=C++, caption={EmptyNode.hpp}, firstnumber=0, label={code:min_eigen_ROSnode_hpp}]
+#include "rclcpp/rclcpp.hpp" 
+
+// create our own Node as a subclass of Node:
+class EmptyNode : public rclcpp::Node{
+public:
+    // constructor is the only mandatory function: 
+    EmptyNode();
+};
+\end{lstlisting}
+
+\begin{lstlisting}[language=C++, caption={EmptyNode.cpp}, firstnumber=0, label={code:min_eigen_ROSnode_cpp}]
+#include "rclcpp/rclcpp.hpp" 
+#include "EmptyNode.hpp"
+
+// the constructor initialized the super class Node:
+EmptyNode::EmptyNode() : Node("EmptyNode"){ }
+\end{lstlisting}
+
+\begin{lstlisting}[language=C++, caption={main.cpp}, firstnumber=0, label={code:min_eigen_ROSnode_main}]
+#include "rclcpp/rclcpp.hpp"
+#include "EmptyNode.hpp"
+
+int main(int argc, char **argv){
+    rclcpp::init(argc, argv);
+    
+    // create a EmptyNode and
+    // make it a shared pointer:
+    auto node = std::make_shared<EmptyNode>();
+    
+    rclcpp::spin(node); 
+    rclcpp::shutdown(); 
+    return 0;
+}
+\end{lstlisting}
+
+\noindent In codevoorbeelden \ref{code:hello_world_ROSnode_hpp}, \ref{code:hello_world_ROSnode_cpp} en \ref{code:hello_world_ROSnode_main} zien we een node die wel wat doet. De node HelloNode print achter elkaar ``Hello World!''. Hiervoor gebruiken we de functie \textit{timerCallback()} die ``Hello World!'' print en een timer die deze functie aanroept. De class maakt hiervoor gebruik van een ROS2 timer die we kunnen krijgen van de functie \textit{create\_wall\_timer()} van de superclass \textit{rclcpp::Node}. We ontleden de code onder de codevoorbeelden. 
+
+\begin{lstlisting}[language=C++, caption={HelloNode.hpp}, firstnumber=0, label={code:hello_world_ROSnode_hpp}]
+#include "rclcpp/rclcpp.hpp"
+
+class HelloNode : public rclcpp::Node
+{
+public:
+    HelloNode();
+
+private:
+    // the function to be called by the timer:
+    void timerCallback();
+
+    // the timer:
+    rclcpp::TimerBase::SharedPtr timer_;
+};
+
+\end{lstlisting}
+
+\begin{lstlisting}[language=C++, caption={HelloNode.cpp}, firstnumber=0, label={code:hello_world_ROSnode_cpp}]
+#include "rclcpp/rclcpp.hpp"
+#include "HelloNode.hpp"
+
+HelloNode::HelloNode() : Node("HelloNode"){
+    //initialisation of the timer:
+    timer_ = this->create_wall_timer(
+        std::chrono::milliseconds(200),
+        std::bind(&HelloNode::timerCallback, this));
+}
+    
+void HelloNode::timerCallback(){
+    // print "Hello World!" in the logger:
+    RCLCPP_INFO(this->get_logger(), "Hello World!");
+}
+\end{lstlisting}
+
+\begin{lstlisting}[language=C++, caption={main.cpp}, firstnumber=0, label={code:hello_world_ROSnode_main}]
+#include "rclcpp/rclcpp.hpp"
+#include "HelloNode.hpp"
+
+int main(int argc, char **argv)
+{
+    rclcpp::init(argc, argv);
+    auto node = std::make_shared<HelloNode>();
+    rclcpp::spin(node);
+    rclcpp::shutdown();
+    return 0;
+}
+\end{lstlisting}
+
+\section{RCLCPP\_INFO}
+De functie \textit{RCLCPP\_INFO()} maakt het mogelijk om berichten te loggen. De functie verwacht een logger en een string om te loggen. In codevoorbeeld \ref{code:hello_world_ROSnode_cpp} gebruiken we de logger die we erven van de superclass en loggen we de string "Hello World!".
+De output van de logger zien we op het moment dat we de node starten.
+
+\section{rclcpp::TimerBase::SharedPtr}
+Met \textit{rclcpp::TimerBase::SharedPtr} definiëren we een ROS2 timer object. Deze gebruiken we om de node op bepaalde intervallen een functie uit te laten voeren. In codevoorbeeld \ref{code:hello_world_ROSnode_cpp} is de member \textit{timer\_} een ROS2 timer object. In de constructor initialiseren we \textit{timer\_} met de ge\"erfde functie \textit{create\_wall\_timer()}. Deze functie verwacht twee argumenten: de tijd tussen het aanroepen van de functie en de functie die moet worden aangeroepen. Voor de tijd gebruiken we \textit{std::chrono::milliseconds()}\footnote{Voor meer informatie zie: \url{https://en.cppreference.com/w/cpp/chrono}} met de waarde 200. De functie gaat dus elke 200ms aangeroepen worden. Om de class methode mee te kunnen geven moeten we gebruik maken van \textit{std::bind}\footnote{Een uitleg over \textit{std::bind} kan men vinden op: \url{https://www.youtube.com/watch?v=JtUZmkvroKg}}.
+
+\section{HelloNode op jouw computer}% een voorbeeld is niet compleet als de student het niet kan reproduceren.
+In Appendix \ref{chp:HelloNode_package} staan de stappen die moeten worden doorlopen om van HelloNode.cpp een werkend voorbeeld te maken.
+
+
+\section{ROS communicatie}
+De communicatie tussen de verschillende nodes/processen\footnote{Dit kunnen processen zijn die hardware aansturen, maar kunnen ook processen zijn die sensordata verwerken (bijvoorbeeld beeldherkenning), de Business logic afhandelen (de ``AI'') of berekeningen doen die nodig zijn voor het aansturen van andere processen.} kan in ROS op drie manieren: via \textit{services}, via \textit{topics} of via \textit{actions}. Een node neemt deel aan de communicatie door \'e\'en of meerdere communicatierollen aan te nemen. Bij topics kennen we de communicatierollen \textit{publishers} en \textit{subscribers}, bij services hebben we \textit{servers} en \textit{clients} en bij actions hebben we \textit{action servers} en \textit{action clients}. Een node neemt een communicatierol aan door binnen haar class een member variabele te declareren en te initialiseren van het type dat hoort bij de communicatierol. Een class mag meerdere members hebben en de programmeur is dus ook vrij om meerdere communicatierollen te geven aan een node. Zo kan een node zowel een publisher en action client zijn of een subscriber zijn op twee verschillende topics en publisher op een ander topic.
+
+In de hoofdstukken \ref{chp:topics}, \ref{chp:services} en \ref{chp:actions} leggen we uit wat de verschillende manieren van communiceren en de bijbehorende rollen omvatten. Per communicatiemethode en rol geven we een voorbeeld in C++\footnote{Deze voorbeelden (en meer) zijn ook te vinden op OnderwijsOnline. De ROS documentatie geeft ons ook een uitleg op: \url{https://index.ros.org/doc/ros2/Tutorials/Writing-A-Simple-Cpp-Publisher-And-Subscriber/}}. 
+

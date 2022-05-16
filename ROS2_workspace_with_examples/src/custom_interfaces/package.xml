@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <!-- name has to be the same as the projectname in CMakeLists.txt -->
+  <name>custom_interfaces</name>
+  <version>0.0.0</version>
+  <description>A package with a custom message, service and action</description>
+  <maintainer email="jorn.bunk@han.nl">Jorn Bunk</maintainer>
+  <license>Attribution 4.0 International</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_lint_common</test_depend>
+
+  <!-- these 3 lines are needed to build the interface-types -->
+  <build_depend>rosidl_default_generators</build_depend>
+  <exec_depend>rosidl_default_runtime</exec_depend>
+  <member_of_group>rosidl_interface_packages</member_of_group>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

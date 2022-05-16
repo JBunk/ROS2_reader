@@ -1,0 +1,9 @@
+# see for all field types:
+# https://index.ros.org/doc/ros2/Concepts/About-ROS-Interfaces/
+# <fieldtype> <fieldname>:
+# a service has a request and a response. The different typ of messages are
+# seperated with the dotted line (---)
+string input_word
+---
+bool is_it
+string output_word

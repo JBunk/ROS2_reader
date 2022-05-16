@@ -1,0 +1,19 @@
+[0.127s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'list', '-p', '--base-paths', '/home/jorn/ROSprojects/college_ws/src/pubsub_custom_msg_in_pkg']
+[0.127s] DEBUG:colcon:Parsed command line arguments: Namespace(base_paths=['/home/jorn/ROSprojects/college_ws/src/pubsub_custom_msg_in_pkg'], build_base='build', ignore_user_meta=False, log_base=None, log_level=None, main=<bound method ListVerb.main of <colcon_package_information.verb.list.ListVerb object at 0x7f63ffd48940>>, metas=['./colcon.meta'], names_only=False, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_end=None, packages_ignore=None, packages_ignore_regex=None, packages_select=None, packages_select_build_failed=False, packages_select_by_dep=None, packages_select_regex=None, packages_select_test_failures=False, packages_skip=None, packages_skip_build_finished=False, packages_skip_by_dep=None, packages_skip_regex=None, packages_skip_test_passed=False, packages_skip_up_to=None, packages_start=None, packages_up_to=None, packages_up_to_regex=None, paths=None, paths_only=True, topological_graph=False, topological_graph_density=False, topological_graph_dot=False, topological_graph_dot_cluster=False, topological_graph_dot_include_skipped=False, topological_graph_legend=False, topological_order=False, verb_extension=<colcon_package_information.verb.list.ListVerb object at 0x7f63ffd48940>, verb_name='list', verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0x7f63ffc7d2e0>)
+[0.158s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.158s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.158s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.158s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.158s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.158s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/jorn/ROSprojects/college_ws/src/pubsub_custom_msg_in_pkg'
+[0.158s] Level 1:colcon.colcon_core.package_identification:_identify(/home/jorn/ROSprojects/college_ws/src/pubsub_custom_msg_in_pkg) by extensions ['ignore', 'ignore_ament_install']
+[0.158s] Level 1:colcon.colcon_core.package_identification:_identify(/home/jorn/ROSprojects/college_ws/src/pubsub_custom_msg_in_pkg) by extension 'ignore'
+[0.158s] Level 1:colcon.colcon_core.package_identification:_identify(/home/jorn/ROSprojects/college_ws/src/pubsub_custom_msg_in_pkg) by extension 'ignore_ament_install'
+[0.159s] Level 1:colcon.colcon_core.package_identification:_identify(/home/jorn/ROSprojects/college_ws/src/pubsub_custom_msg_in_pkg) by extensions ['colcon_pkg']
+[0.159s] Level 1:colcon.colcon_core.package_identification:_identify(/home/jorn/ROSprojects/college_ws/src/pubsub_custom_msg_in_pkg) by extension 'colcon_pkg'
+[0.159s] Level 1:colcon.colcon_core.package_identification:_identify(/home/jorn/ROSprojects/college_ws/src/pubsub_custom_msg_in_pkg) by extensions ['colcon_meta']
+[0.159s] Level 1:colcon.colcon_core.package_identification:_identify(/home/jorn/ROSprojects/college_ws/src/pubsub_custom_msg_in_pkg) by extension 'colcon_meta'
+[0.159s] Level 1:colcon.colcon_core.package_identification:_identify(/home/jorn/ROSprojects/college_ws/src/pubsub_custom_msg_in_pkg) by extensions ['ros']
+[0.159s] Level 1:colcon.colcon_core.package_identification:_identify(/home/jorn/ROSprojects/college_ws/src/pubsub_custom_msg_in_pkg) by extension 'ros'
+[0.174s] DEBUG:colcon.colcon_core.package_identification:Package '/home/jorn/ROSprojects/college_ws/src/pubsub_custom_msg_in_pkg' with type 'ros.ament_cmake' and name 'pubsub_custom_msg_in_pkg'
+[0.175s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults

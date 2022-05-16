@@ -1,0 +1,131 @@
+\chapter{HelloNode package}
+\label{chp:HelloNode_package}
+In hoofdstuk \ref{chp:ROS_nodes} hebben we gekeken naar hoe de C++code voor een simpele ROS 2 node er uitziet. In dit hoofdstuk maken we van HelloNode van codevoorbeeld \ref{code:hello_world_ROSnode_hpp}, \ref{code:hello_world_ROSnode_cpp} en \ref{code:hello_world_ROSnode_main} een werkende package\footnote{De code is ook te vinden op de git van deze reader.}. Dit hoofdstuk is geen vervanging de tutorials op \url{https://index.ros.org/doc/ros2/Tutorials/}, maar geeft de lezer wel een inzicht en toelichting in welke stappen doorlopen moeten worden voor het maken van een ROS 2 Foxy Fitzroy package op een Linux-machine. Een package is een collectie van één of meerdere ROS-nodes die logische wijs bij elkaar horen. Een typisch ROS-project bestaat uit meerdere packages.
+
+Mocht je ROS 2 nog niet hebben geïnstalleerd dan kan dat via. In deze uitleg gaan we uit van ROS 2 versie \textit{Foxy Fitzroy}.
+\begin{center}
+    \url{https://docs.ros.org/en/foxy/Installation.html}
+\end{center}
+
+\subsubsection{ROS 2 environment}
+Als we met ROS aan de slag gaan moeten we altijd eerst de ROS 2 environment starten:
+\begin{lstlisting}[style=DOS, caption={}, firstnumber=0, label={}]
+ source /opt/ros/foxy/setup.bash
+\end{lstlisting}
+
+\subsubsection{Workspace}
+Je kan de packages in een bestaande workspace plaatsen. Als je nog geen workspace\footnote{Een workspace is een bestand of folder dat de gebruiker de mogelijkheid geeft om allerlei source code bestanden en resources te verzamelen en mee te werken als \'e\'en samenhangend geheel (vrij vertaald van wikipedia). Dit betekent dat als je een workspace hebt ongerelateerde bestanden (bijvoorbeeld zowel bestanden uit deze reader als andere projecten) dat je een rommel aan het maken bent.} hebt of het netjes in een nieuwe workspace wil plaatsen, dan moet je eerst een folder aanmaken. Wij noemen onze folder \textit{reader\_ws}. In deze workspace plaatsen we alle packages die in deze reader worden behandeld. Het is een ROS-conventie om de packages in de \textit{src} (source) folder van de workspace te plaatsen. We maken onze workspace met src-folder met de volgende commandline:
+\begin{lstlisting}[style=DOS, caption={}, firstnumber=0, label={}]
+ mkdir -p ~/reader_ws/src
+\end{lstlisting}
+
+\subsubsection{Het maken van een lege package}
+We bewegen onszelf naar de folder waar we de packages gaan plaatsen:
+\begin{lstlisting}[style=DOS, caption={}, firstnumber=0, label={}]
+ cd ~/reader_ws/src
+\end{lstlisting}
+Het maken van een package gaat met de commando \textit{ros2 pkg create --build-type ament\_cmake <package\_name>}\footnote{Dit commando komt met nog veel meer functionaliteit. Bijvoorbeeld kunnen de dependencies automatisch aan \textit{package.xml} en \textit{CMakeLists.txt} toegevoegd worden door gebruik te maken van de flag \textit{--dependencies}.}. Het commando maakt voor ons de folderstructuur van de package en de bestanden \textit{CMakeLists.txt} en \textit{package.xml}. Deze bestanden helpen ons met het bouwen van de package en het starten van verschillende packages. We noemen onze package Hello:
+\begin{lstlisting}[style=DOS, caption={}, firstnumber=0, label={}]
+ros2 pkg create --build-type ament_cmake hello
+\end{lstlisting}
+
+\subsubsection{Code in de package}
+Gebruik je favouriete tekst-editor om \textit{HelloNode.cpp} te maken zoals beschreven in codevoorbeelden \ref{code:hello_world_ROSnode_hpp}, \ref{code:hello_world_ROSnode_cpp} en \ref{code:hello_world_ROSnode_main}. Plaats HelloNode.cpp en main.cpp in de folder \textit{~/reader\_ws/src/Hello/src} en HelloNode.hpp in de folder \textit{~/reader\_ws/src/Hello/include/hello}. De inhoud van onze folder is nu:
+\begin{lstlisting}[caption={De folder structuur inclusief bestanden van de package Hello.}, firstnumber=0, label={}]
+\reader_ws
+    \src
+        \hello
+            CMakeLists.txt
+            package.xml
+            \include
+                \hello
+                    HelloNode.hpp
+            \src
+                HelloNode.cpp
+                main.cpp
+\end{lstlisting}
+
+\subsubsection{Package.xml}
+In package.xml geven we informatie over de package Hello zoals de naam, beschrijving, license en de dependencies. Deze informatie is niet alleen handig voor anderen die de package gaan gebruiken, maar de dependencies zijn noodzakelijk voor het correct werken met ROS 2. Open package.xml in je favoriete teksteditor en zorg dat het de onderstaande inhoud heeft. Let vooral op regel 11. Hiermee zeggen we dat onze package afhankelijk is van \textit{rclcpp}.
+
+\begin{lstlisting}[style=XML, firstnumber=0]
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>hello</name>
+  <version>0.0.0</version>
+  <description>A node that says hello to the world!</description>
+  <maintainer email="Jorn.Bunk@han.nl">Jorn Bunk</maintainer>
+  <license>Attribution 4.0 International (CC BY 4.0)</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <depend>rclcpp</depend>
+
+  <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_lint_common</test_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>
+\end{lstlisting}
+\subsubsection{CMakeLists.txt}
+In de CMakeLists.txt geven we de build instellingen van onze package. Open CMakeLists.txt in je favoriete teksteditor en zorg dat het de onderstaande inhoud heeft. De standaard CMakeLists.txt bevat ook een aantal onderdelen die we niet nodig hebben\footnote{De standaard CMakeLists.txt bevat ook een aantal zaken niet die bij sommige packages wel nodig zijn, bijvoorbeeld als de package ook messages definieert.}, deze opgeruimd. Er 3 belangrijke onderdelen aan dit bestand. Allereerst hebben we de \textit{find\_package()}-functies waarin de dependencies moeten worden genoemd. In het geval van deze package is dat enkel \textit{rclcpp} en \textit{ament\_cmake}. Die laatste is standaard. Het tweede onderdeel is het toevoegen van de executable met \textit{add\_exutable()} en \textit{ament\_target\_dependencies()}, zodat ROS 2 de package kan uitvoeren. We moeten hierbij onze executable een naam geven. Er is hier voor de naam \textit{greeter} gekozen. Als laatste moeten we ook zorgen dat ROS 2 onze executable kan vinden. Dit doen we met de functie \textit{install()}. Een package kan ook bestaan uit meerdere executables. Hiervoor moeten regel 18 en 19 worden herhaald met de instellingen van de andere executables en moeten de namen van de executables worden toegevoegd aan het lijstje met TARGETS (regel 22/23).
+
+\begin{lstlisting}
+cmake_minimum_required(VERSION 3.5)
+project(hello)
+
+# Default to C++14
+if(NOT CMAKE_CXX_STANDARD)
+  set(CMAKE_CXX_STANDARD 14)
+endif()
+
+if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+  add_compile_options(-Wall -Wextra -Wpedantic)
+endif()
+
+# find dependencies
+find_package(ament_cmake REQUIRED)
+find_package(rclcpp REQUIRED)
+
+# The path to our header files:
+# make sure the folder inside /include had the same name as the project!
+include_directories(include/${PROJECT_NAME}/)
+
+# add the executable
+add_executable(greeter src/main.cpp src/HelloNode.cpp)
+ament_target_dependencies(greeter rclcpp)
+
+# Making ROS 2 able to find our package:
+install(TARGETS
+  greeter
+  DESTINATION lib/${PROJECT_NAME})
+
+ament_package()
+\end{lstlisting}
+
+\subsubsection[Bouwen en rennen]{Bouwen en rennen\footnote{Dit is een grapje.}}
+Waarschijnlijk heb je al de dependencies die nodig zijn voor de package Hello, desondanks is het een goede gewoonte om te controlleren op missende dependencies. Dit doe je door dit in de hoofdfolder van je workspace (\textit{reader\_ws}) het volgende te runnen:
+
+\begin{lstlisting}[style=DOS, caption={}, firstnumber=0, label={}]
+ rosdep install -i --from-path src --rosdistro foxy -y
+\end{lstlisting}
+
+\noindent Het bouwen van de package doen we, nog steeds vanuit de folder \textit{reader\_ws}, nu met: 
+\begin{lstlisting}[style=DOS, caption={}, firstnumber=0, label={}]
+ colcon build --packages-select hello
+\end{lstlisting}
+
+\noindent De package is nu gebouwd. Om onze package te runnen moeten we eerst de setup files uitvoeren:
+\begin{lstlisting}[style=DOS, caption={}, firstnumber=0, label={}]
+ . install/setup.bash
+\end{lstlisting}
+
+\noindent De node kunnen we nu starten met:
+\begin{lstlisting}[style=DOS, caption={}, firstnumber=0, label={}]
+ros2 run hello greeter
+\end{lstlisting}
+
+\noindent Gebruik CTRL+C om de node te stoppen. 

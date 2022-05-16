@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>actsrv_action_from_custom_interfaces</name>
+  <version>0.0.0</version>
+  <description>An example of an action server and client in ROS 2.</description>
+  <maintainer email="Jorn.Bunk@han.nl">Jorn Bunk</maintainer>
+  <license>Creative Commons Attribution 4.0 International</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <!-- place your dependencies here:-->
+  <depend>rclcpp</depend>
+  <depend>rclcpp_action</depend>
+  <depend>custom_interfaces</depend>
+
+  <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_lint_common</test_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>
