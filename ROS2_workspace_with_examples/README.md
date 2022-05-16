@@ -10,7 +10,7 @@ Om deze codevoorbeelden werkend te zien bouw dan vanuit deze folder de workspace
 
 Voeg de ROS 2 enviroment toe aan de terminal:  
 `source /location/of/ROSinstallation/ros/foxy/setup.bash`  
-Bij standaard installatie wordt de commando:  
+Bij standaard installatie wordt het commando:  
 `source /opt/ros/foxy/setup.bash`
 
 Ga naar de workspace:  
