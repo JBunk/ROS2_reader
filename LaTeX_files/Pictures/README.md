@@ -1,6 +1,6 @@
 # The images are used under differend licences. 
 
-**1DOFRobotarm.png** - todo  
+**servo.jpg** - image by author. Image is in public domain.
 **640px-John_H_Conway_2005.jpg** - image by Thane Plambeck. This work is free. Source: [wikipedia](https://commons.wikimedia.org/wiki/File:John_H_Conway_2005_(cropped).jpg)  
 **Action-SingleActionClient.png** - image from the [ROS 2 documentation](https://docs.ros.org/en/foxy/Tutorials/Understanding-ROS2-Actions.html)  
 **robot_pepper.JPG** - images by Tokumeigakarinoaoshima. Image is in public domain. Source: [wikipedia](https://commons.wikimedia.org/wiki/File:SoftBank_pepper.JPG)  
