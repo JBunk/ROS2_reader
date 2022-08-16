@@ -2,7 +2,7 @@
 
 **servo.jpg** - image by author. Image is in public domain (CC0).  
 **640px-John_H_Conway_2005.jpg** - image by Thane Plambeck. Released under the [Creative Commons Attribution 2.0 Generic license](https://creativecommons.org/licenses/by/2.0/deed.en). Source: [Flickr](https://www.flickr.com/photos/thane/20366806/).  
-**Action-SingleActionClient.png** - image from the [ROS 2 documentation](https://docs.ros.org/en/foxy/Tutorials/Understanding-ROS2-Actions.html) by Open Robotics. The ROS2 documentation is licensed under the Creative Commons Attribution 4.0 International License. 
+**Action-SingleActionClient.png** - image from the [ROS 2 documentation](https://docs.ros.org/en/foxy/Tutorials/Understanding-ROS2-Actions.html) by Open Robotics. The ROS2 documentation is licensed under the Creative Commons Attribution 4.0 International License.  
 **robot_pepper.JPG** - images by Tokumeigakarinoaoshima. Image is in public domain. Source: [wikipedia](https://commons.wikimedia.org/wiki/File:SoftBank_pepper.JPG).  
 **robot_multiple_coordinatesystems.png** - image from [the ROS-wiki](https://wiki.ros.org/tf2). The ROS wiki is licensed under the Creative Commons Attribution 3.0. Tf2 is licensed under the BSD License. Tf2 auteurs: Tully Foote, Eitan Marder-Eppstein and Wim Meeussen.
 **architectuur-WOR1920-S2.png** - image by students from the HAN university of Applied Sciences.  
