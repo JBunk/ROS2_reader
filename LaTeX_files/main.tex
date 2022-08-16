@@ -89,11 +89,11 @@
 \renewcommand{\appendixtocname}{Appendices}
 
 % add for bibliography:
-% Bibliographybackref=true,abbreviate=false,
-%\usepackage{csquotes}
-%\usepackage[style=authoryear,citestyle=apa,natbib=true,autopunct=true%,backend=biber]{biblatex}
-%\addbibresource{bibliography.bib} % BibTeX bibliography file
-%\defbibheading{bibempty}{}
+%Bibliographybackref=true, abbreviate=false,
+\usepackage{csquotes}
+\usepackage[citestyle=ieee, natbib=true,autopunct=true, backend=biber]{biblatex}  %orgineel was citestyle apa en parameter: style=authoryear,
+\addbibresource{bibliography.bib} % BibTeX bibliography file
+\defbibheading{bibempty}{}
 
 \input{Layout_files/structure} % Insert the commands.tex file which contains the majority of the structure behind the template
 
@@ -232,14 +232,10 @@ Huib Aldewereld & & \LaTeX-template \\
 
 % below is needed if we want to add a bibliography
 
-%\chapterimage{header-proof.png} % Table of contents heading image
-
-%\pagestyle{empty} % No headers
-
-%\printbibliography\addcontentsline{toc}{chapter}{Bibliografie} 
-
-%\cleardoublepage % Forces the first chapter to start on an odd page so it's on the right
-
-%\pagestyle{fancy} % Print headers again
+\chapterimage{cc_pixabay_header_bureau} % Table of contents heading image
+\pagestyle{empty} % No headers
+\printbibliography\addcontentsline{toc}{chapter}{Bibliografie} 
+\cleardoublepage % Forces the first chapter to start on an odd page so it's on the right
+\pagestyle{fancy} % Print headers again
 
 \end{document}
