@@ -49,3 +49,16 @@ For use in this reader changes were applied to the LaTeX-template.
 [cc-by-sa-shield]: https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg
 
 The **code-examples** are licensed under [the unlicense licentie](https://unlicense.org/). This means that they are released in the public domain and can be used free and without consequences in any (ROS 2-)sofwtare project. Attribution is appreciated, but not mandatory. When code-examples are used in tutorials or in any other form of explaination it is appreciated that guidelines of the license of the reader are followed, but even that is not mandatory. _The code has been set free. Let's get back to coding._
+
+
+
+Shield: [![CC BY 4.0][cc-by-shield]][cc-by]
+
+This work is licensed under a
+[Creative Commons Attribution 4.0 International License][cc-by].
+
+[![CC BY 4.0][cc-by-image]][cc-by]
+
+[cc-by]: http://creativecommons.org/licenses/by/4.0/
+[cc-by-image]: https://i.creativecommons.org/l/by/4.0/88x31.png
+[cc-by-shield]: https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg
