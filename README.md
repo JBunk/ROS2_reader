@@ -16,10 +16,10 @@ Bij gebruikt van (inhoud van) de reader volstaat als naamsvermelding: Jorn Bunk.
 Bij het gebruik van de LaTeX-template voor de opmaak volstaat als naamsvermelding: Huib Aldewereld.
 De LaTeX-template is aangepast voor gebruik in deze reader.
 
-[![CC BY-SA 4.0][cc-by-sa-image]][cc-by-sa]
-[cc-by-sa]: https://creativecommons.org/licenses/by-sa/4.0/deed.nl
-[cc-by-sa-image]: https://licensebuttons.net/l/by-sa/4.0/88x31.png
-[cc-by-sa-shield]: https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg
+[![CC BY-SA 4.0][cc-by-sa-image]][cc-by-sa]  
+[cc-by-sa]: https://creativecommons.org/licenses/by-sa/4.0/deed.nl  
+[cc-by-sa-image]: https://licensebuttons.net/l/by-sa/4.0/88x31.png  
+[cc-by-sa-shield]: https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg  
 
 De **codevoorbeelden** zijn gelicentieerd met de [de unlicense licentie](https://unlicense.org/), zodat ze vrij en zonder consequenties gebruikt kunnen worden als basis voor elk (ROS2-)software project. De codevoorbeelden behoren tot het publieke domein. Naamsvermelding wordt wel gewaardeerd, maar is dus niet verplicht. Bij het gebruik van de codevoorbeelden in tutorials of andere vormen van uitleg wordt gewaardeerd als men de richtlijnen van de licentie van de reader volgt, maar ook dit is niet verplicht.  _The code has been set free. Let's get back to coding._
 
