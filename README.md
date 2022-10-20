@@ -1,11 +1,11 @@
 # ROS2_reader
 *English follows Dutch* 
 
-Deze reader geeft de lezer de basis voor het gebruik van de C++-library [ROS 2](https://www.ros.org/). De [officiële ROS 2 tutorials en codevoorbeelden](https://docs.ros.org/en/foxy/) zijn pittig en geven niet altijd het complete begrip om (snel) te kunnen beginnen met het bouwen van eigen ROS 2 packages. De reader dicht dit gat en maakt van magische code begrijpbare C++ en een handige bibliotheek. De reader bevat uitleg, codevoorbeelden en practicumopgaven om de lezer te begeleiden.
+Deze reader geeft de lezer de basis voor het gebruik van de C++-library [ROS 2](https://www.ros.org/). De [officiële ROS 2 tutorials en codevoorbeelden](https://docs.ros.org/en/foxy/) zijn pittig en geven niet altijd het complete begrip om (snel) te kunnen beginnen met het bouwen van eigen ROS 2 packages. De reader dicht dit gat en maakt van magische code begrijpbare C++. De reader bevat uitleg, codevoorbeelden en practicumopgaven om de lezer te begeleiden.
 
 De reader is beschikbaar als pdf en als losse latex bestanden. De pdf gebouwd in [Overleaf](https://www.overleaf.com) met de LuaLatex compiler. 
 
-Alle codevoorbeelden uit de reader zijn ook beschikbaar in de repository. Daarnaast zijn er nog extra codevoorbeelden beschikbaar. De codevoorbeelden zijn getest met ROS 2 Foxy Fitzroy.
+Alle codevoorbeelden uit de reader zijn ook beschikbaar in de repository. Daarnaast zijn er nog extra codevoorbeelden beschikbaar. De codevoorbeelden zijn getest met ROS 2 Foxy Fitzroy. 
 
 ### Mogelijke uitbreidingen
 Een reader en practicum kan altijd beter. Verbeteringen en bijdrage aan de reader en codevoorbeelden zijn altijd welkom. Mogelijke toevoegingen aan de reader zijn een hoofdstuk over ROS-launch-files en meer practicumopdrachten waarbij gegeven code gelezen of geanalyseerd moet worden (Bloom niveaus begrip en analyse).
