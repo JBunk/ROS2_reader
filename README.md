@@ -39,7 +39,7 @@ For use in this reader changes were applied to the LaTeX-template.
 
 ## License code examples
 <img src="https://upload.wikimedia.org/wikipedia/commons/6/62/PD-icon.svg" width="30" height="30"></img>  
-The **code examples** are licensed under [the unlicense licentie](https://unlicense.org/). This means that they are released in the public domain and can be used free and without consequences in any (ROS 2-)sofwtare project. Attribution is appreciated, but not mandatory. When code examples are used in tutorials or in any other form of explaination it is appreciated that guidelines of the license of the reader are followed, but even that is not mandatory. _The code has been set free. Let's get back to coding._
+The **code examples** are licensed under [the unlicense licentie](https://unlicense.org/). This means that they are released in the public domain and can be used free and without consequences in any (ROS 2-)software project. Attribution is appreciated, but not mandatory. When code examples are used in tutorials or in any other form of explaination it is appreciated that guidelines of the license of the reader are followed, but even that is not mandatory. _The code has been set free. Let's get back to coding._
 
 
 
