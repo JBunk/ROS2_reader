@@ -7,6 +7,8 @@ De reader is beschikbaar als pdf en als losse latex bestanden. De pdf gebouwd in
 
 Alle codevoorbeelden uit de reader zijn ook beschikbaar in de repository. Daarnaast zijn er nog extra codevoorbeelden beschikbaar. De codevoorbeelden zijn getest met ROS 2 Foxy Fitzroy. 
 
+Vragen over gebruik van de reader in het onderwijs en/of trainingen? Ik denk graag mee: [Linkedin](https://www.linkedin.com/in/jorn-bunk-ab1aab16a/)
+
 ### Mogelijke uitbreidingen
 Een reader en practicum kan altijd beter. Verbeteringen en bijdrage aan de reader en codevoorbeelden zijn altijd welkom. Mogelijke toevoegingen aan de reader zijn een hoofdstuk over ROS-launch-files en meer practicumopdrachten waarbij gegeven code gelezen of geanalyseerd moet worden (Bloom niveaus begrip en analyse).
 
@@ -28,6 +30,8 @@ De **codevoorbeelden** zijn gelicentieerd met de [de unlicense licentie](https:/
 *note: Comments in the code-examples are in english. The reader is written in Dutch.*
 
 The reader explaines the use of the C++-library [ROS 2](https://www.ros.org/). the [official ROS 2 tutorials and code-examples](https://docs.ros.org/en/foxy/) are complex and often do not offer complete explainations. Leaving 'black magic" in code examples which haltens new users to quickly start coding themselfes with ROS 2. The reader lifts the curtain and shows that the magic is just C++ and a usefull library. The reader also contains practicum exercises to guide the reader trough the chapters.
+
+Questions about the use of the reader? I'm happy to help: [Linkedin](https://www.linkedin.com/in/jorn-bunk-ab1aab16a/)
 
 ## License reader
 [![CC BY-SA 4.0][cc-by-sa-shield]][cc-by-sa]  
