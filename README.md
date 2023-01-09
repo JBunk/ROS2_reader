@@ -3,7 +3,7 @@
 
 Deze reader geeft de lezer een stevige basis voor het gebruiken van de C++-library [ROS 2](https://www.ros.org/). De [officiële ROS 2 tutorials en codevoorbeelden](https://docs.ros.org/en/foxy/) zijn pittig en geven niet altijd het complete begrip om (snel) te kunnen beginnen met het bouwen van eigen ROS 2 packages. De reader dicht dit gat en maakt van magische code begrijpbare C++. De reader bevat uitleg, codevoorbeelden en practicumopgaven om de lezer te begeleiden in het zich eigen maken van ROS2.
 
-De reader is beschikbaar als pdf en als losse latex bestanden. De pdf gebouwd in [Overleaf](https://www.overleaf.com) met de LuaLatex compiler. 
+De reader is beschikbaar als pdf en als losse latex bestanden. De pdf is gebouwd in [Overleaf](https://www.overleaf.com) met de LuaLatex compiler. 
 
 Alle codevoorbeelden uit de reader zijn ook beschikbaar in de repository. Daarnaast zijn er nog extra codevoorbeelden beschikbaar. De codevoorbeelden zijn getest met ROS 2 Foxy Fitzroy. 
 
