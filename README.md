@@ -5,7 +5,7 @@ Deze reader geeft de lezer een stevige basis voor het gebruiken van de C++-libra
 
 De reader is beschikbaar als pdf en als losse latex bestanden. De pdf is gebouwd in [Overleaf](https://www.overleaf.com) met de LuaLatex compiler. 
 
-Alle codevoorbeelden uit de reader zijn ook beschikbaar in de repository. Daarnaast zijn er nog extra codevoorbeelden beschikbaar. De codevoorbeelden zijn getest met ROS 2 Foxy Fitzroy. 
+Alle codevoorbeelden in de reader zijn ook als losse bestanden beschikbaar in de repository. Daarnaast zijn er nog extra codevoorbeelden beschikbaar. De codevoorbeelden zijn getest met ROS 2 Foxy Fitzroy. 
 
 Vragen over gebruik van de reader in het onderwijs en/of trainingen? Ik denk graag mee: [Linkedin](https://www.linkedin.com/in/jorn-bunk-ab1aab16a/)
 
