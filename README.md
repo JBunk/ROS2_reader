@@ -37,8 +37,8 @@ Questions about the use of the reader? I'm happy to help: [Linkedin](https://www
 [![CC BY-SA 4.0][cc-by-sa-shield]][cc-by-sa]  
 the **reader** en the **latex-template** are licensed under
 [Creative Commons Attribution-ShareAlike 4.0 International Licentie][cc-by-sa].  
-Auteur of the content of the reader: Jorn Bunk  
-Orginal auteur of the LaTeX-template: Huib Aldewereld  
+Author of the content of the reader: Jorn Bunk  
+Orginal author of the LaTeX-template: Huib Aldewereld  
 For use in this reader changes were applied to the LaTeX-template.
 
 ## License code examples
